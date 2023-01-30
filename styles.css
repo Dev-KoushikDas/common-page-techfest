@@ -1,0 +1,412 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+
+a{
+    text-decoration: none;
+
+}
+
+ul{
+    list-style: none;
+}
+
+
+body , html{
+padding: 1px;
+background-color: #141A31;
+
+min-height: 100vh;
+}
+
+.title{
+display: flex;
+text-align: center;
+font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+font-size: 4vmin;
+color: cyan;
+margin-bottom: 5px;
+padding-top: 1%;
+}
+
+
+.college{
+position: relative;
+top:-1%;
+height: 1%;
+width: 5%;
+margin: 5px 10px;
+}
+
+
+.wrapper_flex{
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+
+.wrapper{
+display: inline-flex;
+}
+
+
+.wrapper .static-txt{
+color: #fff;
+font-weight: 400;
+font-size:40px;
+height: 60px;
+line-height: 60px;
+font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+.wrapper .dynamic-txts{
+
+margin-left: 15px;
+height: 60px;
+line-height: 60px;
+overflow: hidden;
+font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+.dynamic-txts li{
+color: rgb(255, 0, 251);
+list-style: none;
+
+font-size:  40px;
+font-weight: 500;
+position: relative;
+top:0;
+animation: slide 6s steps(4) infinite;
+}
+
+
+@keyframes slide{
+100%{
+top:-240px;
+}
+}
+
+
+.dynamic-txts li span{
+position: relative;
+}
+
+.dynamic-txts li span::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #141A31;
+    border-left: 2px solid red;
+    animation: typing 1.5s steps(10) infinite;
+}
+
+
+@keyframes typing{
+100%{
+left:100%;
+margin: 0 -30px 0 30px;
+}
+}
+
+
+.row{
+display: flex;
+align-items: center;
+width: 100%;
+justify-content:center;
+/* background: cadetblue; */
+
+}
+
+
+.row .col{
+display: flex;
+position: relative;
+flex-direction: column;
+justify-content: center;
+width: 37%;
+align-items: center;
+margin-top: 1.5%;
+margin-left:  8%;
+margin-right: 8%;
+padding: 0 0.5%;
+margin-bottom: 0;
+border-radius: 8%; 
+border: 4px solid cyan;
+box-shadow:0px 0px 100px #4fc3dc,
+inset 5px 5px 10px rgba(0,0,0,1),
+inset 5px 5px 32px rgba(134, 145, 210, 0.795),
+inset -5px -5px 15px rgba(0,0,0,0.75);
+}
+
+.image{
+margin: 20px;
+}
+.image:hover{
+    scale: 1.05;
+
+    /* transform-style: preserve-3d;
+    transform: translate3d(5%,-5%,50%) ; */
+    /* transform: perspective(500px) translate3d(10px, 0, 100px); */
+}
+
+
+.events .row{
+margin-top: 50px;
+}
+
+
+h4{
+font-size: 3vmin;
+color: aqua;
+margin: 20px ;
+}
+
+
+.container{
+position: relative;
+overflow: hidden;
+}
+
+
+.bubbles{
+z-index: 100000;
+position: relative;
+display: flex;
+}
+
+
+.bubbles span{
+position: relative;
+height: 80px;
+width: 80px;
+background:#4fc3dc;
+margin: 0 4px;
+border-radius: 50%;
+box-shadow: 0 0 0 10px #4fc3dc44,
+0 0 50px #4fc3dc,
+0 0 100px #4fc3dc;
+animation: animate 15s linear infinite;
+animation-duration: calc(125s/ var(--i));
+}
+
+
+.bubbles span:nth-child(even)
+{
+    background: yellow;
+    box-shadow: 0 0 0 10px #ff2d7544,
+    0 0 50px #ff2d75,
+    0 0 100px #ff2d75;
+}
+
+
+@keyframes animate
+{
+0%
+{
+transform: translateY(100vh) scale(0);
+}
+100%{
+transform: translateY(-120vh) scale(1);
+}
+}
+
+
+
+@media  all and (max-width:400px){
+.row{
+    flex-direction: column;
+}
+
+.col img{
+    max-width: 80%;
+}
+
+.row .col {
+    margin: 20px auto;
+}
+
+.bubbles span{
+    height: 0.01px;
+    width: 0.01px;
+}
+
+.college{
+width: 10%;
+margin: 3px 5px;
+}
+
+
+.wrapper .static-txt{
+font-weight: 200;
+font-size:10px;
+height: 15px;
+line-height: 15px;
+}
+    
+.wrapper .dynamic-txts{
+margin-left: 10px;
+height: 15px;
+line-height: 15px;
+}
+    
+    
+.dynamic-txts li{
+list-style: none;
+font-size:  10px;
+font-weight: 500;
+}
+
+.dynamic-txts li{
+    color: rgb(255, 0, 251);
+    list-style: none;
+    
+    font-size:  10px;
+    font-weight: 500;
+    position: relative;
+    top:0;
+    animation: slide4 6s steps(4) infinite;
+}
+    
+    
+@keyframes slide4{
+    100%{
+    top:-60px;
+    }
+}
+
+
+.dynamic-txts li span::after{
+animation: typing2 1.5s steps(10) infinite;
+}
+
+
+@keyframes typing2{
+100%{
+left:100%;
+margin: 0 -35px 0 35px;
+}
+}
+
+}
+
+
+@media all and (max-width: 991px) {
+    .row{
+        flex-direction: column;
+    }
+    
+    
+    .row .col {
+        margin: 20px auto;
+        
+    }
+    
+    .col img{
+        max-width: 90%;
+    }
+    .bubbles span{
+        height: 3px;
+        width: 3px;
+    }
+    .college{
+        width: 12%;
+        margin: 3px 5px;
+    }
+
+    
+    .wrapper .static-txt{
+    font-weight: 200;
+    font-size:20px;
+    height: 30px;
+    line-height: 30px;
+    }
+        
+    .wrapper .dynamic-txts{
+    margin-left: 15px;
+    height: 30px;
+    line-height: 30px;
+    }
+        
+        
+    .dynamic-txts li{
+    list-style: none;
+    font-size:  20px;
+    font-weight: 500;
+    }
+    
+    .dynamic-txts li{
+        color: rgb(255, 0, 251);
+        list-style: none;
+        
+        font-size:  20px;
+        font-weight: 500;
+        position: relative;
+        top:0;
+        animation: slide3 6s steps(4) infinite;
+        }
+        
+        
+    @keyframes slide3{
+        100%{
+        top:-120px;
+        }
+    }
+
+}
+
+@media all and (max-width: 1600px) {
+
+    .row .col {
+        margin: 20px auto;
+    }
+    
+    .col img{
+        max-width: 90%;
+    }
+    .bubbles span{
+        height: 10px;
+        width: 10px;
+    }
+
+}
+
+
+@media all and (max-width: 1440px) {
+    .row .col {
+        margin: 10px 15px;
+    }
+    
+    .col img{
+        max-width: 80%;
+    }
+    .bubbles span{
+        height: 20px;
+        width: 20px;
+    }
+}
+
+
+@media all and (max-width: 1250px) {
+    .title{
+    padding: 2%;
+    }
+    .row .col {
+        margin: 10px ;
+    }
+    
+    .col img{
+        max-width: 90%;
+    }
+    .bubbles span{
+        height: 15px;
+        width: 15px;
+    }
+}
